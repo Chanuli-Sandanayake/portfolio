@@ -247,19 +247,34 @@ export default function App() {
     </div>
   )}
 
-  {/* Swiper */}
-  <div className="max-w-5xl mx-auto px-6">
-    <Slider
-      dots={true}
-      infinite={true}
-      speed={500}
-      slidesToShow={2}
-      slidesToScroll={1}
-      responsive={[
-        { breakpoint: 1024, settings: { slidesToShow: 2 } },
-        { breakpoint: 768, settings: { slidesToShow: 1 } },
-      ]}
-    >
+  <Slider
+  dots={true}
+  infinite={true}
+  speed={500}
+  slidesToShow={2}
+  slidesToScroll={1}
+  responsive={[
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "0px",
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "0px",
+      },
+    },
+  ]}
+>
+
       {projects.map((project, index) => (
         <div key={index} className="px-4">
           <div className="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden transform transition hover:scale-105">
@@ -277,8 +292,7 @@ export default function App() {
           </div>
         </div>
       ))}
-    </Slider>
-  </div>
+  </Slider>
 </section>
 
 
@@ -353,25 +367,40 @@ export default function App() {
 
 
 
-        {/* Certifications Section */}
+{/* Certifications Section */}
 <section id="certifications" className="py-20 bg-gray-100 dark:bg-gray-800">
   <h2 className="text-3xl font-bold text-center mb-10 text-blue-900 dark:text-yellow-400">
     Certifications
   </h2>
 
-  {/* Slider for Certifications */}
-  <div className="max-w-5xl mx-auto px-6">
-    <Slider
-      dots={true}
-      infinite={true}
-      speed={500}
-      slidesToShow={2}
-      slidesToScroll={1}
-      responsive={[
-        { breakpoint: 1024, settings: { slidesToShow: 2 } },
-        { breakpoint: 768, settings: { slidesToShow: 1 } },
-      ]}
-    >
+  <Slider
+  dots={true}
+  infinite={true}
+  speed={500}
+  slidesToShow={2}
+  slidesToScroll={1}
+  responsive={[
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "0px",
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: "0px",
+      },
+    },
+  ]}
+ >
+
       {[
         {
           src: "/certificates/agile.jpg",
@@ -421,7 +450,7 @@ export default function App() {
         </div>
       ))}
     </Slider>
-  </div>
+  
 
   {/* Modal */}
   {selectedCert && (
@@ -509,7 +538,7 @@ export default function App() {
               type="submit"
               className="w-full py-3 bg-gradient-to-r from-blue-900 to-blue-700 dark:from-yellow-400 dark:to-yellow-500 text-white dark:text-black font-semibold rounded-lg shadow-md transform transition duration-300 hover:scale-105"
             >
-              🚀 Send Message
+               Send Message
             </button>
           </form>
 
