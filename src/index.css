@@ -1,0 +1,92 @@
+@import "tailwindcss";
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+
+
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+@keyframes pulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+.animate-pulseGlow {
+  animation: pulseGlow 2s infinite;
+}
+
+
+/* Default (uses Tailwind default classes) */
+
+/* Light Theme */
+.light {
+  --bg-color: #e6f2ff;    /* light blue background */
+  --text-color: #00264d;  /* deep blue text */
+  --card-bg: #ffffff;     /* white cards */
+}
+
+.light body,
+.light .font-sans {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.light section,
+.light nav,
+.light footer {
+  background-color: var(--bg-color) !important;
+  color: var(--text-color) !important;
+}
+
+.light .card,
+.light .rounded-xl {
+  background-color: var(--card-bg) !important;
+  color: var(--text-color) !important;
+}
+
+.light .skill-card {
+  background-color: #f9fcff !important; /* very light bluish white */
+  color: var(--text-color) !important;
+}
+
+/* Light mode section backgrounds */
+.light section#projects {
+  background-color: #f0f4ff !important; /* soft blue */
+}
+
+.light section#skills {
+  background-color: #ffffff !important; /* white clean */
+}
+
+.light section#certifications {
+  background-color: #f9fcff !important; /* bluish white */
+}
+
+.light section#contact {
+  background-color: #d4e5f4 !important; /* pale light blue */
+}
+
+/* Make skill cards adapt better */
+.light .skill-card {
+  background-color: #f9fcff !important;
+  color: #0f172a !important; /* slate-900 like text */
+}
+
