@@ -67,7 +67,7 @@ export default function App() {
     description: "A personal portfolio website to showcase my projects, experience, and skills with an interactive and responsive design.",
     role: "Designed and developed the entire portfolio using React.js with smooth animations and a responsive UI.",
     tools: "React.js, Tailwind CSS, Vite, React Slick, JavaScript",
-    github: "https://github.com/Chanuli-Sandanayake/Serenestay_HotelFinder.git",
+    github: "https://github.com/Chanuli-Sandanayake/portfolio.git",
   },
 ];
 
