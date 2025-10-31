@@ -373,6 +373,7 @@ export default function App() {
     Certifications
   </h2>
 
+  
   <Slider
   dots={true}
   infinite={true}
@@ -450,7 +451,7 @@ export default function App() {
         </div>
       ))}
     </Slider>
-  
+    
 
   {/* Modal */}
   {selectedCert && (
