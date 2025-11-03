@@ -69,6 +69,15 @@ export default function App() {
     tools: "React.js, Tailwind CSS, Vite, React Slick, JavaScript",
     github: "https://github.com/Chanuli-Sandanayake/portfolio.git",
   },
+
+  {
+    title: "Dashboard Using Power BI",
+    image: "/dashboard.png",
+    description: "Built an interactive dashboard using Power BI Desktop to analyze data professional survey among different countries",
+    role: "Designed dynamic visuals with slicers, drill-throughs, and custom filters for data exploration.",
+    tools: "Power BI, Excel",
+    
+  }
 ];
 
 
@@ -107,8 +116,10 @@ export default function App() {
           <div className="space-x-6 hidden md:flex">
             <a href="#projects" className="hover:text-yellow-300 transition-colors duration-300 hover:scale-110 transform inline-block">Projects</a>
             <a href="#skills" className="hover:text-yellow-300 transition-colors duration-300 hover:scale-110 transform inline-block">Skills</a>
+            <a href="#education" className="hover:text-yellow-300 transition-colors duration-300 hover:scale-110 transform inline-block">Education</a>
             <a href="#certifications" className="hover:text-yellow-300 transition-colors duration-300 hover:scale-110 transform inline-block">Certifications</a>
             <a href="#contact" className="hover:text-yellow-300 transition-colors duration-300 hover:scale-110 transform inline-block">Contact</a>
+            
           </div>
           <button
             onClick={() =>
@@ -365,7 +376,66 @@ export default function App() {
           </div>
         </section>
 
+        {/* Education Section */}
+<section id="education" className="py-20 bg-white dark:bg-gray-900">
+  <h2 className="text-3xl font-bold text-center mb-10 text-blue-900 dark:text-yellow-400">
+    My Education
+  </h2>
+  <p className="text-center max-w-2xl mx-auto mb-12 text-gray-700 dark:text-gray-300">
+    My academic milestones reflect a strong foundation of learning, innovation, and dedication to continuous growth.
+  </p>
 
+  {/* Timeline Container */}
+  <div className="relative flex flex-col md:flex-row md:items-center md:justify-between max-w-6xl mx-auto px-6">
+
+    {/* Line (vertical on mobile, horizontal on desktop) */}
+    <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-900 dark:bg-yellow-400 md:w-full md:h-1 md:left-0 md:top-1/2 md:translate-x-0 md:transform-none"></div>
+
+    {/* Card 1 */}
+    <div className="relative z-10 flex flex-col items-center text-center md:text-left md:items-start w-full md:w-1/2 mb-16 md:mb-0 md:px-6">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border-l-4 md:border-l-0 md:border-t-4 border-blue-900 dark:border-yellow-400 hover:scale-105 transition-transform duration-300">
+        <div className="flex items-center gap-3 mb-4">
+          <img src="/uoc.png" alt="University of Colombo" className="w-10 h-10 rounded-full" />
+          <h3 className="text-xl font-bold text-blue-900 dark:text-yellow-400">University of Colombo</h3>
+        </div>
+        <p className="text-gray-700 dark:text-gray-300 mb-2">📅 <strong>2023 – Present</strong></p>
+        <p className="font-semibold text-blue-800 dark:text-yellow-400 mb-2">
+          Bachelor of Information and Communication Technology (BICT Hons)
+        </p>
+        <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1 text-sm">
+          <li>Modules in IT Project Management, Enterprise Resource Planning, and Software Engineering.</li>
+          <li>Experience in team-based real-world academic projects.</li>
+        </ul>
+      </div>
+      {/* Dot */}
+      <span className="absolute top-0 md:top-1/2 md:left-[calc(50%-0.625rem)] left-[50%] transform -translate-x-1/2 md:-translate-y-1/2 bg-blue-900 dark:bg-yellow-400 rounded-full w-5 h-5 border-4 border-white dark:border-gray-900"></span>
+    </div>
+
+    {/* Card 2 */}
+    <div className="relative z-10 flex flex-col items-center text-center md:text-right md:items-end w-full md:w-1/2 md:px-6">
+      <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 border-l-4 md:border-l-0 md:border-t-4 border-blue-900 dark:border-yellow-400 hover:scale-105 transition-transform duration-300">
+        <div className="flex items-center gap-3 mb-4 justify-center md:justify-end">
+          <img src="/mrc.jpeg" alt="Mahinda Rajapaksha College" className="w-10 h-10 rounded-full" />
+          <h3 className="text-xl font-bold text-blue-900 dark:text-yellow-400">Mahinda Rajapaksha College,Homagama</h3>
+        </div>
+        <p className="text-gray-700 dark:text-gray-300 mb-2">📅 <strong>2021</strong></p>
+        <p className="font-semibold text-blue-800 dark:text-yellow-400 mb-2">Technology Stream</p>
+        <ul className="list-disc list-inside text-gray-700 dark:text-gray-300 space-y-1 text-sm">
+          <li>Information & Communication Technology – A</li>
+          <li>Science for Technology – B</li>
+          <li>Bio Systems Technology – B</li>
+          <li>General English – A</li>
+        </ul>
+      </div>
+      {/* Dot */}
+      <span className="absolute bottom-0 md:top-1/2 md:right-[calc(50%-0.625rem)] left-[50%] transform -translate-x-1/2 md:-translate-y-1/2 bg-blue-900 dark:bg-yellow-400 rounded-full w-5 h-5 border-4 border-white dark:border-gray-900"></span>
+    </div>
+  </div>
+</section>
+
+
+
+        
 
 {/* Certifications Section */}
 <section id="certifications" className="py-20 bg-gray-100 dark:bg-gray-800">

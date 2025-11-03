@@ -2,6 +2,9 @@
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
 
+
+
+
 /* Swiper / React Slick Visibility Fix */
 .slick-slide {
   padding: 0 15px;
@@ -147,4 +150,61 @@ html {
   background-color: #f9fcff !important;
   color: #0f172a !important; /* slate-900 like text */
 }
+
+
+
+/* Force equal card heights and mobile single-view slider */
+.slick-slide > div {
+  display: flex !important;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  #projects .slick-slide > div,
+  #certifications .slick-slide > div {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+
+  #projects .slick-track,
+  #certifications .slick-track {
+    display: flex !important;
+  }
+
+  #projects .slick-slide,
+  #certifications .slick-slide {
+    display: flex !important;
+    justify-content: center;
+  }
+
+  #projects .rounded-xl,
+  #certifications .rounded-xl {
+    width: 95%;
+    margin: auto;
+  }
+}
+
+
+/* Timeline responsive behavior */
+#education .relative {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  #education .timeline-line {
+    height: 4px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  #education .timeline-line {
+    width: 4px;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
 
