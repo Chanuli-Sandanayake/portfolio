@@ -4,8 +4,33 @@ import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
 
+import Particles from "react-tsparticles";
+import { loadFull } from "tsparticles";
+
 
 import Slider from "react-slick";
+
+import { useInView } from "react-intersection-observer";
+function FadeInSection({ children }) {
+  const { ref, inView } = useInView({
+    threshold: 0.2,
+    triggerOnce: true,
+  });
+
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-1000 transform ${
+        inView
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 translate-y-10"
+      }`}
+    >
+      {children}
+    </div>
+  );
+}
+
 
 
 export default function App() {
@@ -106,8 +131,8 @@ export default function App() {
 };
 
   return (
-    <div className={theme === "dark" ? "dark" : theme === "light" ? "light" : ""}>
-
+    <div className={`${theme === "dark" ? "dark" : theme === "light" ? "light" : ""} relative`}>
+      
       <div className="font-sans bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-500">
 
         {/* Navbar */}
@@ -127,13 +152,62 @@ export default function App() {
             }
             className="px-4 py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition"
           >
-            {theme === "default" ? "☀ Light Mode" : theme === "light" ? "🌙 Dark Mode" : "🖌 Default"}
+            {theme === "default" ? "☀Light Mode" : theme === "light" ? "🌙Dark Mode" : "🖌 Default"}
           </button>
 
         </nav>
 
         {/* Hero Section */}
-        <section className="flex flex-col md:flex-row items-center justify-center min-h-screen text-center md:text-left px-6 gap-10">
+        <section className="relative flex flex-col md:flex-row items-center justify-center min-h-screen text-center md:text-left px-6 gap-10">
+
+
+          <Particles
+            id="tsparticles"
+            init={async (main) => {
+              await loadFull(main);
+            }}
+            options={{
+              background: { color: { value: "transparent" } },
+              fpsLimit: 60,
+              interactivity: {
+                events: {
+                  onHover: { enable: true, mode: "repulse" },
+                  onClick: { enable: true, mode: "push" },
+                },
+                modes: {
+                  repulse: { distance: 120, duration: 0.4 },
+                  push: { quantity: 3 },
+                },
+              },
+              particles: {
+                number: { value: 80, density: { enable: true, area: 800 } },
+                color: { value: "#ffffff" },
+                shape: { type: "circle" },
+                opacity: { value: 0.5 },
+                size: { value: { min: 1, max: 3 } },
+                links: {
+                  enable: true,
+                  color: "#ffffff",
+                  distance: 150,
+                  opacity: 0.4,
+                  width: 1,
+                },
+                move: {
+                  enable: true,
+                  speed: 1.5,
+                  direction: "none",
+                  random: false,
+                  straight: false,
+                  outModes: { default: "out" },
+                },
+              },
+              detectRetina: true,
+            }}
+            className="absolute top-0 left-0 w-full h-full z-0"
+          />
+
+          
+
           {/* Profile Image */}
           <div className="relative">
             <div className="absolute inset-0 rounded-full border-4 border-blue-500 dark:border-yellow-400 animate-pulseGlow"></div>
@@ -148,10 +222,14 @@ export default function App() {
               Hi, I'm Chanuli
             </h1>
             <p className="text-lg md:text-xl max-w-2xl mb-6">
-              Aspiring <span className="font-semibold">Business Analyst</span> &{" "}
-              <span className="font-semibold">Project Manager</span> <br />
+              <span className="animated-text text-blue-900 dark:text-yellow-400 font-semibold">
+                Aspiring Business Analyst & Project Manager
+              </span>
+
+              <br />
               Undergraduate – University of Colombo, Faculty of Technology (BICT Hons)
             </p>
+
             <div className="space-x-4">
               <a
                 href="#projects"
@@ -183,6 +261,7 @@ export default function App() {
 
 {/* Projects Section */}
 <section id="projects" className="py-20 bg-gray-100 dark:bg-gray-800">
+  <FadeInSection>
   <h2 className="text-3xl font-bold text-center mb-10 text-blue-900 dark:text-yellow-400">
     My Projects
   </h2>
@@ -304,11 +383,13 @@ export default function App() {
         </div>
       ))}
   </Slider>
+  </FadeInSection>
 </section>
 
 
         {/* Skills Section */}
         <section id="skills" className="py-20 bg-white dark:bg-gray-900">
+          <FadeInSection>
           <h2 className="text-3xl font-bold text-center mb-10 text-blue-900 dark:text-yellow-400">
             Skills
           </h2>
@@ -374,10 +455,12 @@ export default function App() {
               </div>
             </div>
           </div>
+          </FadeInSection>
         </section>
 
         {/* Education Section */}
 <section id="education" className="py-20 bg-white dark:bg-gray-900">
+  <FadeInSection>
   <h2 className="text-3xl font-bold text-center mb-10 text-blue-900 dark:text-yellow-400">
     My Education
   </h2>
@@ -431,6 +514,7 @@ export default function App() {
       <span className="absolute bottom-0 md:top-1/2 md:right-[calc(50%-0.625rem)] left-[50%] transform -translate-x-1/2 md:-translate-y-1/2 bg-blue-900 dark:bg-yellow-400 rounded-full w-5 h-5 border-4 border-white dark:border-gray-900"></span>
     </div>
   </div>
+  </FadeInSection>
 </section>
 
 
@@ -439,6 +523,7 @@ export default function App() {
 
 {/* Certifications Section */}
 <section id="certifications" className="py-20 bg-gray-100 dark:bg-gray-800">
+  <FadeInSection>
   <h2 className="text-3xl font-bold text-center mb-10 text-blue-900 dark:text-yellow-400">
     Certifications
   </h2>
@@ -547,12 +632,14 @@ export default function App() {
       </div>
     </div>
   )}
+  </FadeInSection>
 </section>
 
 
 
         {/* Contact Section */}
         <section id="contact" className="py-20 bg-white dark:bg-gray-900">
+          <FadeInSection>
           <h2 className="text-3xl font-bold mb-6 text-center text-blue-900 dark:text-yellow-400">
             Get in Touch
           </h2>
@@ -646,6 +733,7 @@ export default function App() {
               <span>GitHub</span>
             </a>
           </div>
+          </FadeInSection>
 
         </section>
 
