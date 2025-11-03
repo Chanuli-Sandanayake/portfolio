@@ -349,8 +349,7 @@ export default function App() {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "0px",
+        arrows: false,
       },
     },
     {
@@ -358,12 +357,13 @@ export default function App() {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "0px",
+        arrows: false,
+        centerMode: false,
       },
     },
   ]}
 >
+
 
       {projects.map((project, index) => (
         <div key={index} className="px-4">
@@ -541,8 +541,7 @@ export default function App() {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "0px",
+        arrows: false,
       },
     },
     {
@@ -550,12 +549,13 @@ export default function App() {
       settings: {
         slidesToShow: 1,
         slidesToScroll: 1,
-        centerMode: true,
-        centerPadding: "0px",
+        arrows: false,
+        centerMode: false,
       },
     },
   ]}
- >
+>
+
 
       {[
         {
