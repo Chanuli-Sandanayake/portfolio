@@ -65,14 +65,29 @@
 }
 
 
+
+
+/* Force only one centered card on mobile */
 @media (max-width: 768px) {
-  .slick-slide {
-    padding: 0 10px;
+  #projects .slick-slide,
+  #certifications .slick-slide {
+    display: flex !important;
+    justify-content: center !important;
   }
-  .slick-list {
-    margin: 0 -10px;
+
+  #projects .slick-slide > div,
+  #certifications .slick-slide > div {
+    width: 90% !important;
+    margin: auto !important;
+  }
+
+  #projects .slick-track,
+  #certifications .slick-track {
+    display: flex !important;
+    align-items: center !important;
   }
 }
+
 
 
 @keyframes fadeIn {
@@ -141,8 +156,12 @@ html {
 /* Light mode section backgrounds */
 .light section#projects {
   background-color: #f0f4ff !important; /* soft blue */
+  
 }
-
+.light section#about {
+  background-color: #f0f4ff !important; /* soft blue */
+  
+}
 .light section#skills {
   background-color: #ffffff !important; /* white clean */
 }

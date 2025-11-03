@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
-import { FaEnvelope, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FaEnvelope, FaLinkedin, FaGithub,FaFacebook, FaInstagram } from "react-icons/fa";
 
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
@@ -139,6 +139,7 @@ export default function App() {
         <nav className="flex justify-between items-center px-6 py-4 bg-blue-900 dark:bg-gray-800 text-white sticky top-0 shadow-lg z-50">
           <h1 className="text-2xl font-bold">Chanuli</h1>
           <div className="space-x-6 hidden md:flex">
+            <a href="#about" className="hover:text-yellow-300 transition-colors duration-300 hover:scale-110 transform inline-block">About</a>
             <a href="#projects" className="hover:text-yellow-300 transition-colors duration-300 hover:scale-110 transform inline-block">Projects</a>
             <a href="#skills" className="hover:text-yellow-300 transition-colors duration-300 hover:scale-110 transform inline-block">Skills</a>
             <a href="#education" className="hover:text-yellow-300 transition-colors duration-300 hover:scale-110 transform inline-block">Education</a>
@@ -158,50 +159,24 @@ export default function App() {
         </nav>
 
         {/* Hero Section */}
-        <section className="relative flex flex-col md:flex-row items-center justify-center min-h-screen text-center md:text-left px-6 gap-10">
-
-
+        <section className="relative flex flex-col md:flex-row items-center justify-center min-h-screen text-center md:text-left px-6 gap-10 overflow-hidden">
           <Particles
             id="tsparticles"
-            init={async (main) => {
-              await loadFull(main);
-            }}
+            init={async (main) => await loadFull(main)}
             options={{
               background: { color: { value: "transparent" } },
               fpsLimit: 60,
+              particles: {
+                number: { value: 80 },
+                color: { value: "#ffffff" },
+                links: { enable: true, color: "#ffffff" },
+                move: { enable: true, speed: 1.5 },
+              },
               interactivity: {
                 events: {
                   onHover: { enable: true, mode: "repulse" },
-                  onClick: { enable: true, mode: "push" },
-                },
-                modes: {
-                  repulse: { distance: 120, duration: 0.4 },
-                  push: { quantity: 3 },
                 },
               },
-              particles: {
-                number: { value: 80, density: { enable: true, area: 800 } },
-                color: { value: "#ffffff" },
-                shape: { type: "circle" },
-                opacity: { value: 0.5 },
-                size: { value: { min: 1, max: 3 } },
-                links: {
-                  enable: true,
-                  color: "#ffffff",
-                  distance: 150,
-                  opacity: 0.4,
-                  width: 1,
-                },
-                move: {
-                  enable: true,
-                  speed: 1.5,
-                  direction: "none",
-                  random: false,
-                  straight: false,
-                  outModes: { default: "out" },
-                },
-              },
-              detectRetina: true,
             }}
             className="absolute top-0 left-0 w-full h-full z-0"
           />
@@ -209,7 +184,7 @@ export default function App() {
           
 
           {/* Profile Image */}
-          <div className="relative">
+          <div className="relative z-10">
             <div className="absolute inset-0 rounded-full border-4 border-blue-500 dark:border-yellow-400 animate-pulseGlow"></div>
             <img
               src="/chanuli.jpg"
@@ -219,7 +194,7 @@ export default function App() {
           </div>
           <div>
             <h1 className="text-4xl md:text-6xl font-extrabold mb-4 text-blue-900 dark:text-yellow-400">
-              Hi, I'm Chanuli
+              Chanuli Sandanayake
             </h1>
             <p className="text-lg md:text-xl max-w-2xl mb-6">
               <span className="animated-text text-blue-900 dark:text-yellow-400 font-semibold">
@@ -253,14 +228,83 @@ export default function App() {
                 📄 Download CV
               </a>
             </div>
+            {/* Social Media Icons */}
+            <div className="flex justify-center md:justify-start mt-6 space-x-6 text-2xl">
+              <a
+                href="mailto:chanulisandanayake@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-900 dark:text-yellow-400 hover:text-yellow-500 dark:hover:text-white transition transform hover:scale-125"
+              >
+                <FaEnvelope />
+              </a>
+              <a
+                href="https://github.com/Chanuli-Sandanayake"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-900 dark:text-yellow-400 hover:text-yellow-500 dark:hover:text-white transition transform hover:scale-125"
+              >
+                <FaGithub />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/chanuli-sandanayake/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-900 dark:text-yellow-400 hover:text-yellow-500 dark:hover:text-white transition transform hover:scale-125"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="https://www.facebook.com/share/17hkSa2sLL/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-900 dark:text-yellow-400 hover:text-yellow-500 dark:hover:text-white transition transform hover:scale-125"
+              >
+                <FaFacebook />
+              </a>
+              <a
+                href="https://www.instagram.com/chanuli_thisalya_?igsh=emZremRxMXV5dWZq"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-900 dark:text-yellow-400 hover:text-yellow-500 dark:hover:text-white transition transform hover:scale-125"
+              >
+                <FaInstagram />
+              </a>
+            </div>
+
           </div>
+        </section>
+
+        {/* About Me Section */}
+        <section id="about" className="py-20 bg-gray-100 dark:bg-gray-800">
+          <FadeInSection>
+            <h2 className="text-3xl font-bold text-center mb-10 text-blue-900 dark:text-yellow-400">
+              About Me
+            </h2>
+            <div className="flex flex-col md:flex-row items-center justify-center max-w-5xl mx-auto px-6 gap-10">
+              
+              <div className="text-center md:text-left space-y-4">
+                <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                  I’m <span className="font-semibold text-blue-900 dark:text-yellow-400">Chanuli Sandanayake</span>, 
+                  an enthusiastic third year undergraduate pursuing my Bachelor of Information and Communication Technology (Hons) 
+                  at the University of Colombo. I’m passionate about bridging technology and business, focusing on 
+                  <strong> Business Analysis, Project Management, and UX/UI Design.</strong>
+                </p>
+                <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
+                  I love turning ideas into impactful digital solutions and continuously learning tools and 
+                  frameworks that improve collaboration and efficiency. My goal is to become a skilled 
+                  <strong> Business Analyst</strong> and future <strong>Project Manager</strong> who drives innovation 
+                  through teamwork and design thinking.
+                </p>
+              </div>
+            </div>
+          </FadeInSection>
         </section>
 
 
 
-
 {/* Projects Section */}
-<section id="projects" className="py-20 bg-gray-100 dark:bg-gray-800">
+<section id="projects" className="py-20 bg-white dark:bg-gray-900">
   <FadeInSection>
   <h2 className="text-3xl font-bold text-center mb-10 text-blue-900 dark:text-yellow-400">
     My Projects
@@ -348,25 +392,33 @@ export default function App() {
       breakpoint: 1024,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
+        centerMode: true,
+        centerPadding: "0px",
       },
     },
     {
       breakpoint: 768,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        centerMode: false,
+        centerMode: true,
+        centerPadding: "0px",
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        centerMode: true,
+        centerPadding: "0px",
       },
     },
   ]}
 >
 
 
+
       {projects.map((project, index) => (
-        <div key={index} className="px-4">
+        <div key={index} className="flex justify-center px-4">
           <div className="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden transform transition hover:scale-105">
             <img src={project.image} alt={project.title} className="w-full h-56 object-cover" />
             <div className="p-5">
@@ -388,7 +440,7 @@ export default function App() {
 
 
         {/* Skills Section */}
-        <section id="skills" className="py-20 bg-white dark:bg-gray-900">
+        <section id="skills" className="py-20 bg-gray-100 dark:bg-gray-800">
           <FadeInSection>
           <h2 className="text-3xl font-bold text-center mb-10 text-blue-900 dark:text-yellow-400">
             Skills
@@ -540,21 +592,29 @@ export default function App() {
       breakpoint: 1024,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
+        centerMode: true,
+        centerPadding: "0px",
       },
     },
     {
       breakpoint: 768,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        centerMode: false,
+        centerMode: true,
+        centerPadding: "0px",
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        centerMode: true,
+        centerPadding: "0px",
       },
     },
   ]}
 >
+
 
 
       {[
@@ -589,7 +649,7 @@ export default function App() {
           caption: "Agile Scrum Master offered by SkillUp",
         },
       ].map((cert, idx) => (
-        <div key={idx} className="px-4">
+        <div key={idx} className="flex justify-center px-4">
           <div
             className="bg-white dark:bg-gray-700 rounded-xl shadow-lg overflow-hidden transform transition duration-500 hover:scale-105 hover:shadow-2xl cursor-pointer"
             onClick={() => setSelectedCert(cert.src)}
