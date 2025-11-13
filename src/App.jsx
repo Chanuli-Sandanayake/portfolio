@@ -45,7 +45,7 @@ export default function App() {
     title: "QR Attendance System",
     image: "qr.png",
     description: "QR-based attendance marking system built with my team mates.",
-    role: "Conducted requirement analysis and prepared technical documentation for system workflow.",
+    role: "Handled Lecture and Event Management Module and Conducted requirement analysis and prepared technical documentation for system workflow with my teammates.",
     technologies: "HTML, CSS, JavaScript, PHP, SQL",
     documentation: "https://docs.google.com/document/d/1u7QTZmdULE_U_CyzA3HyFlzS2lFcB85kdGFWuySHcmM/edit?usp=sharing",
     github: "https://github.com/Chamaracperera/Attendance-Marking-System.git",
@@ -54,7 +54,7 @@ export default function App() {
     title: "Library Management System",
     image: "/lib.png",
     description: "A web app for managing library records and book lending built with my team mates.",
-    role: "Business Analyst & Team Lead",
+    role: "Handled Book Registration module & Team Lead",
     tools: "HTML, CSS, JavaScript, PHP, SQL",
     view: "https://www.linkedin.com/posts/chamara-perera-b832762b7_librarysystem-webdev-softwareengineering-ugcPost-7359828250086260736-gUal?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD44V3sBZWmRSxtgWy2dSCIAIT9lElDb5Yc",
     github: "https://github.com/Chamaracperera/LMS.git",
@@ -64,14 +64,14 @@ export default function App() {
     image: "/voicepoint.png",
     description: "A simple mobile app built with Android Studio (Java).",
     role: "Designed the UI and Documented development stages and maintained change logs.",
-    tools: "Android Studio,Java,SQLite, Figma",
+    tools: "Android Studio,Java,Firebase,SQLite, Figma",
     documentation: "https://docs.google.com/document/d/1FZofdQ0kfb-uViUFMBxwJQAJIs8j32I5Fp-ef3cDZ3M/edit?usp=sharinghttps://docs.google.com/document/d/1FZofdQ0kfb-uViUFMBxwJQAJIs8j32I5Fp-ef3cDZ3M/edit?usp=sharing",
     github: "https://github.com/Chanuli-Sandanayake/My_voicepoint_newsapp.git",
   },
   {
     title: "UI/UX Design Project",
     image: "/uiux.png",
-    description: "Self-learning project: Designed modern app/web UI in Figma.",
+    description: "Self-learning project: Designed modern app UI in Figma.",
     role: "UI/UX Designer",
     tools: "Figma",
     view: "https://www.linkedin.com/posts/chanuli-sandanayake_uiuxdesign-figma-practiceproject-activity-7377368537989971968-M-DD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD44V3sBZWmRSxtgWy2dSCIAIT9lElDb5Yc",
@@ -81,7 +81,7 @@ export default function App() {
     title: "SereneStay Website",
     image: "/serenestay.png",
     description: "A website project designed for hotel booking and management.",
-    role: "Business Analyst & Developer",
+    role: "Self-learning project:Developer",
     tools: "HTML, CSS, JavaScript, Firebase, EmailJS",
     view: "https://www.linkedin.com/posts/chanuli-sandanayake_serenestay-hotel-finder-i-developed-activity-7377358203442860032-mI5Y?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD44V3sBZWmRSxtgWy2dSCIAIT9lElDb5Yc",
     github: "https://github.com/Chanuli-Sandanayake/Serenestay_HotelFinder.git",
@@ -137,7 +137,7 @@ export default function App() {
 
         {/* Navbar */}
         <nav className="flex justify-between items-center px-6 py-4 bg-blue-900 dark:bg-gray-800 text-white sticky top-0 shadow-lg z-50">
-          <h1 className="text-2xl font-bold">Chanuli</h1>
+          <h1 className="text-2xl font-bold">Portfolio</h1>
           <div className="space-x-6 hidden md:flex">
             <a href="#about" className="hover:text-yellow-300 transition-colors duration-300 hover:scale-110 transform inline-block">About</a>
             <a href="#projects" className="hover:text-yellow-300 transition-colors duration-300 hover:scale-110 transform inline-block">Projects</a>
@@ -153,7 +153,7 @@ export default function App() {
             }
             className="px-4 py-2 bg-yellow-400 text-black font-semibold rounded-lg hover:bg-yellow-500 transition"
           >
-            {theme === "default" ? "☀Light Mode" : theme === "light" ? "🌙Dark Mode" : "🖌 Default"}
+            {theme === "default" ? "☀" : theme === "light" ? "🌙" : "🖌 Default"}
           </button>
 
         </nav>
