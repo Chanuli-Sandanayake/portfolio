@@ -54,10 +54,10 @@ export default function App() {
     title: "Library Management System",
     image: "/lib.png",
     description: "A web app for managing library records and book lending built with my team mates.",
-    role: "Handled Book Registration module & Team Lead",
+    role: "Handled Library Member Registration module & Team Lead",
     tools: "HTML, CSS, JavaScript, PHP, SQL",
     view: "https://www.linkedin.com/posts/chamara-perera-b832762b7_librarysystem-webdev-softwareengineering-ugcPost-7359828250086260736-gUal?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD44V3sBZWmRSxtgWy2dSCIAIT9lElDb5Yc",
-    github: "https://github.com/Chamaracperera/LMS.git",
+    github: "https://github.com/Chanuli-Sandanayake/Library_System.git",
   },
   {
     title: "Voice Point App",
